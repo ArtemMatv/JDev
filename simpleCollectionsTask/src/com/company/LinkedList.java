@@ -18,11 +18,12 @@ public class LinkedList {
         if (head == null){
             head = new Node(item);
         } else {
-            Node elem = head.next;
-            while (elem != null){
+            Node elem = head;
+            while (elem.next != null){
                 elem = elem.next;
             }
-            elem = new Node(item);
+            elem.next = new Node(item);
+
         }
         _length++;
     }
@@ -82,18 +83,21 @@ public class LinkedList {
             return false;
         } else return false;
     }
-}
 
-class Node{
-    private int _value;
-    public Node next;
-
-    public Node(int value){
-        _value = value;
-        next = null;
-    }
-
-    public int getValue(){
-        return _value;
+    public int get(int position) throws Exception {
+        if(head != null) {
+            if (position == 0) {
+                return head.getValue();
+            }
+            else if (position > 0 && position < _length) {
+                int i = 0;
+                Node elem = head;
+                while (i < position - 1) {
+                    elem = elem.next;
+                    i++;
+                }
+                return elem.next.getValue();
+            }
+        } throw new Exception("There are no items! At all!");
     }
 }

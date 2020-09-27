@@ -12,7 +12,7 @@ public class ArrayList {
     public ArrayList(int capacity){
         if (capacity > 0){
             _array = new int[capacity];
-            _position = 1;
+            _position = 0;
         }
         else {
             _array = new int[16];
@@ -38,14 +38,14 @@ public class ArrayList {
 
     public void remove(int position){
         if (_position > position && position >= 0){
-            for (int i = position; i < _position; i++){
+            for (int i = position; i < _position - 1; i++){
                 _array[i] = _array[i + 1];
             }
             _position--;
         }
         if (_position + 8 < getCapacity() && getCapacity() > 16){
             int[] newArray = new int[getCapacity() - 8];
-            for (int i = 0; i < _position; i++){
+            for (int i = 0; i < _position - 1; i++){
                 newArray[i] = _array[i];
             }
             _array = newArray;
@@ -53,7 +53,7 @@ public class ArrayList {
     }
 
     public int size(){
-        return _position + 1;
+        return _position;
     }
 
     public boolean contains(int item){
