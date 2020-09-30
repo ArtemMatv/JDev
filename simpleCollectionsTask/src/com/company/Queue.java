@@ -14,8 +14,12 @@ public class Queue {
 
     public Queue(int item){
         _start = new Node(item);
-        _end = _start;
+        _end = _start.next;
         _length = 1;
+    }
+
+    public boolean isEmpty(){
+        return _start == null;
     }
 
     public int size(){
@@ -23,25 +27,23 @@ public class Queue {
     }
 
     public void queue(int item){
-        if (_start == null) {
+        if (isEmpty()) {
             _start = new Node(item);
-            _end = _start;
-        } else if (_length == 1){
-            _end = new Node(item);
-            _start.next = _end;
+            _end = _start.next;
         } else {
-            Node newNode = new Node(item);
-            _end.next = newNode;
-            _end = newNode;
+            _end = new Node(item);
+            _end = _end.next;
         }
         _length++;
     }
 
-    public int dequeue(){
-        int result = _start.getValue();
-        _start = _start.next;
-        _length--;
-        return result;
+    public int dequeue() throws Exception {
+        if (!isEmpty()) {
+            int result = _start.getValue();
+            _start = _start.next;
+            _length--;
+            return result;
+        } else throw new Exception("Queue is empty!");
     }
 
     public boolean contains(int item){
