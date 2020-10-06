@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65240b84-ca7b-46e5-a866-2468a843abe8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../streamTask" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -88,10 +82,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1601322221311">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1601389089862">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601322221311" />
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601389089862" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
