@@ -2,9 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.DoubleStream;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -19,9 +16,9 @@ public class Main {
         //test sortOdd()
 
 
-        //test uniqeNumber()
-        System.out.println(uniqeNumber(new double[] {2,2,3,2,2,2,2,2}));
-        //test uniqeNumber()
+        //test uniqueNumber()
+        System.out.println(uniqueNumber(new double[] {2,2,3,2,2,2,2,2}));
+        //test uniqueNumber()
     }
 
     private static int[] sortOdd(int[] array){
@@ -46,7 +43,7 @@ public class Main {
         return array;
     }
 
-    static private double uniqeNumber(double[] array){
+    static private double uniqueNumber(double[] array){
         double[] arr = Arrays.stream(array).sorted().toArray();
         return arr[0] == arr[1] ? arr[arr.length - 1] : arr[0];
     }
