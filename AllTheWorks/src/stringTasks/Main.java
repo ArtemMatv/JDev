@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        nameGame();
     }
 
     static private void countString() {
@@ -67,5 +68,48 @@ public class Main {
             result[av - i] = i;
         }
         return result;
+    }
+
+    static private void nameGame(){//Не розбивав на методи через перевірки :D
+        int action = 1;
+        String names = "";
+        while (action != 3){
+            System.out.println("Enter the action: \n1-add\n2-subtract\n3-close\n4-show all");
+            action = new Scanner(System.in).nextInt();
+            String name ="";
+            switch (action){
+                case 1:
+                    System.out.println("enter name:");
+                    name = new Scanner(System.in).next();
+                    if (name.charAt(0) != '+') {
+                        System.out.println("bad format!");
+                        break;
+                    }
+                    names += name.substring(1, name.length()) + ", ";
+                    break;
+                case 2:
+                    System.out.println("enter name:");
+                    name = new Scanner(System.in).next();
+                    if (name.charAt(0) != '-') {
+                        System.out.println("bad format!");
+                        break;
+                    }
+                    if (!names.contains(name.substring(1, name.length()))){
+                        System.out.println("there is no such name");
+                        break;
+                    }
+                    names = names.replaceAll(name.substring(1, name.length()) + ", ", "");
+                    break;
+                case 3:
+                    System.out.println("\nbye bye");
+                    break;
+                case 4:
+                    System.out.println("all the names:\n");
+                    System.out.println(names);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
