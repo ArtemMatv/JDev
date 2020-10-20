@@ -85,6 +85,11 @@ public class Main {
                         System.out.println("bad format!");
                         break;
                     }
+                    if (name.length() <= 1)
+                    {
+                        System.out.println("bad name!");
+                        break;
+                    }
                     names += name.substring(1, name.length()) + ", ";
                     break;
                 case 2:
@@ -92,6 +97,11 @@ public class Main {
                     name = new Scanner(System.in).next();
                     if (name.charAt(0) != '-') {
                         System.out.println("bad format!");
+                        break;
+                    }
+                    if (name.length() <= 1)
+                    {
+                        System.out.println("bad name!");
                         break;
                     }
                     if (!names.contains(name.substring(1, name.length()))){
