@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        countString();
     }
 
     static private void countString() {
@@ -50,5 +49,23 @@ public class Main {
         }
         System.out.println(result);
 
+    }
+
+    static private int[] fillArray(int length){
+        int[] result = new int[length];
+
+        int av = length / 2;
+        int increaser = 0;
+
+        if (length%2 != 1) {
+            increaser = 1;
+            av-=1;
+        }
+
+        for (int i = 0; i <= av; i++){
+            result[av + increaser + i] = i;
+            result[av - i] = i;
+        }
+        return result;
     }
 }
