@@ -5,7 +5,6 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println();
     }
 
     //Write a function, which takes a non-negative integer (seconds) as input and returns
@@ -51,5 +50,52 @@ public class Main {
                                 .reversed())
                         .toArray()[0])
             ).length();
+    }
+
+    //Implement method hasNoLetters. Method returns true if none of the letters in
+    //the blacklist are present in the phrase. If at least one letter from
+    //blacklist is present in the phrase return false. Comparison should be
+    //case insensitive. Meaning 'A' == 'a'
+    private static boolean hasNoLetters(String phrase, String blacklist){
+        phrase = phrase.toLowerCase();
+        blacklist = blacklist.toLowerCase();
+
+        for(int i = 0; i < blacklist.length(); i++)
+            if (phrase.contains(blacklist.substring(i, i + 1)))
+                return false;
+
+        return true;
+    }
+
+    //Implement method findMultiples(x, n) which returns an array
+    //of the first x multiples of the real number n.
+    private static int[] findMultiples(int x, int n) throws Exception {
+        if (x < 1 || n < 1)
+            throw  new Exception("'x' and 'n' must be more than 0!");
+
+        int[] result = new int[x];
+
+        for (int i = 0; i < x; i++){
+            result[i] = n*(i+1);
+        }
+
+        return result;
+
+    }
+
+    //Given an array of strings, reverse them and their order in such way
+    //that their length stays the same as the length of the original inputs
+    private static String[] reverseArray(String[] array){
+        String input = new StringBuilder().append(String.join("", array)).reverse().toString();
+
+        String[] result = new String[array.length];
+
+        int pointer = 0;
+        for (int i = 0; i < result.length; i++){
+            result[i] = input.substring(pointer, pointer + array[i].length());
+            pointer += array[i].length();
+        }
+
+        return result;
     }
 }
