@@ -1,8 +1,11 @@
 package firstDistantLab;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(getDigitSum(493193));
+        System.out.println();
     }
 
     //Write a function, which takes a non-negative integer (seconds) as input and returns
@@ -37,5 +40,16 @@ public class Main {
             return getDigitSum(result);
 
         return result;
+    }
+
+    //Given a sentence. Find the longest word in that sentence
+    //and return it's length
+    private static int getTheLongestWordLength(String sentence){
+        return ((String)
+                (Arrays.stream(sentence.split(" "))
+                        .sorted(Comparator.comparing(String::length)
+                                .reversed())
+                        .toArray()[0])
+            ).length();
     }
 }
